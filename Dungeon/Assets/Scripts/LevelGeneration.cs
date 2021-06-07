@@ -6,6 +6,8 @@ public class LevelGeneration : MonoBehaviour
 {
     public Transform[] startingPositions;
     public GameObject[] rooms;
+    public GameObject player;
+    public GameObject exit;
     private int direction;
     public float moveAmount;
     private float timeBtwRoom;
@@ -13,31 +15,43 @@ public class LevelGeneration : MonoBehaviour
     public float minX;
     public float maxX;
     public float minY;
-    private bool stopGeneration;
+    public bool stopGeneration;
     public LayerMask room;
     private int downCounter;
+    public int chack = 0;
+    public int randStartingPos;
+    public int randExitPos;
 
     private void Start()
     {
-        int randStartingPos = Random.Range(0, startingPositions.Length);
+        chack = chack + 1;
+        randStartingPos = Random.Range(0, startingPositions.Length);
         transform.position = startingPositions[randStartingPos].position;
         Instantiate(rooms[1], transform.position, Quaternion.identity);
+        if (chack == 1) //создание игрока в первой комнате
+        {
+            transform.position = startingPositions[randStartingPos].position;
+            player.transform.position = transform.position;
+        }
 
         direction = Random.Range(1, 6);
-
     }
 
     private void Update()
     {
-        if (timeBtwRoom <= 0 && stopGeneration == false)
+        //if (timeBtwRoom <= 0 && stopGeneration == false)
+        //{
+        if (stopGeneration == false)
         {
             Move();
-            timeBtwRoom = startTimeBtwRoom;
         }
-        else
-        {
-            timeBtwRoom -= Time.deltaTime;
-        }
+            //Move();
+        //    timeBtwRoom = startTimeBtwRoom;
+        //}
+        //else
+        //{
+        //    timeBtwRoom -= Time.deltaTime;
+        //}
     }
 
     private void Move()
@@ -50,6 +64,7 @@ public class LevelGeneration : MonoBehaviour
                 Vector2 newPos = new Vector2(transform.position.x + moveAmount, transform.position.y);
                 transform.position = newPos;
                 int rand = Random.Range(0, rooms.Length);
+                randExitPos = rand;
                 Instantiate(rooms[rand], transform.position, Quaternion.identity);
                 direction = Random.Range(1, 6);
                 if (direction == 3)
@@ -74,6 +89,7 @@ public class LevelGeneration : MonoBehaviour
                 Vector2 newPos = new Vector2(transform.position.x - moveAmount, transform.position.y);
                 transform.position = newPos;
                 int rand = Random.Range(0, rooms.Length);
+                randExitPos = rand;
                 Instantiate(rooms[rand], transform.position, Quaternion.identity);
                 direction = Random.Range(3, 6);
             }
@@ -110,12 +126,18 @@ public class LevelGeneration : MonoBehaviour
                 Vector2 newPos = new Vector2(transform.position.x, transform.position.y - moveAmount);
                 transform.position = newPos;
                 int rand = Random.Range(2, 4);
+                randExitPos = rand;
                 Instantiate(rooms[rand], transform.position, Quaternion.identity);
                 direction = Random.Range(1, 6);
+
             }
             else
             {
                 stopGeneration = true;
+                Vector2 newPos = new Vector2(transform.position.x, transform.position.y);
+                transform.position = newPos;
+                //Instantiate(exit, transform.position, Quaternion.identity);
+                exit.transform.position = transform.position;
             }
         }
     }

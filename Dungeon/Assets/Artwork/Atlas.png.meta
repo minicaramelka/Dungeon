@@ -59,6 +59,12 @@ TextureImporter:
   - first:
       213: 7182614658172301277
     second: Border_0
+  - first:
+      213: -8369517905372312421
+    second: exit
+  - first:
+      213: -9106852675655700425
+    second: floor
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -169,7 +175,7 @@ TextureImporter:
         height: 20
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 3, y: 0, z: 0, w: 5}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -546,7 +552,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -554,6 +560,48 @@ TextureImporter:
       bones: []
       spriteID: ddfafdaf9f5cda360800000000000000
       internalID: 7182614658172301277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exit
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9c03050fcf79db80800000000000000
+      internalID: -8369517905372312421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 64
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 730f9bdddb5fd9180800000000000000
+      internalID: -9106852675655700425
       vertices: []
       indices: 
       edges: []

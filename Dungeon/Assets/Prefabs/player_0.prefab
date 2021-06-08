@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6891122673255930540}
   - component: {fileID: 6891122673255930541}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,11 +96,11 @@ GameObject:
   - component: {fileID: 6891122673508253944}
   - component: {fileID: 6891122673508253927}
   - component: {fileID: 6891122673508253947}
-  - component: {fileID: 6891122673508253926}
   - component: {fileID: 6172340572160259522}
   - component: {fileID: 4909318304048205732}
-  m_Layer: 0
-  m_Name: player_0 1
+  - component: {fileID: -3712670694844056638}
+  m_Layer: 3
+  m_Name: player_0
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,7 +114,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6891122673508253925}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.666, y: 0, z: 0}
+  m_LocalPosition: {x: -4.5, y: 1.5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 6891122673255930540}
@@ -158,8 +158,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1517745483
-  m_SortingLayer: 1
+  m_SortingLayerID: 660751663
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 4018074224661003100, guid: 6fbbc1a8226f4b74d8ee4773e0b5b88d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -231,20 +231,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6891122673508253926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6891122673508253925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a27d35d88ea2d2b4bb05de6075feebbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  maxHealth: 100
 --- !u!114 &6172340572160259522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,7 +249,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   attackRange: 0.17
-  damage: 5
+  damage: 30
   anim: {fileID: 4909318304048205732}
 --- !u!95 &4909318304048205732
 Animator:
@@ -284,6 +270,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-3712670694844056638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6891122673508253925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a27d35d88ea2d2b4bb05de6075feebbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  maxHealth: 100
 --- !u!1 &6891122674133031593
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,7 +293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6891122674133031594}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: attackPos
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}

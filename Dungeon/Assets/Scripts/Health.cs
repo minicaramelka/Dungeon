@@ -16,7 +16,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void SetHealth( int bonusHealth)
+    public void SetHealth(int bonusHealth)
     {
         health += bonusHealth;
         if (health >= maxHealth)

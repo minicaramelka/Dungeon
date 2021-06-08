@@ -39,19 +39,10 @@ public class LevelGeneration : MonoBehaviour
 
     private void Update()
     {
-        //if (timeBtwRoom <= 0 && stopGeneration == false)
-        //{
         if (stopGeneration == false)
         {
             Move();
         }
-            //Move();
-        //    timeBtwRoom = startTimeBtwRoom;
-        //}
-        //else
-        //{
-        //    timeBtwRoom -= Time.deltaTime;
-        //}
     }
 
     private void Move()

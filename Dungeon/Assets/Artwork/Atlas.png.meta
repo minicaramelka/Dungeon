@@ -74,6 +74,12 @@ TextureImporter:
   - first:
       213: -2217874986795218178
     second: HP Bottle
+  - first:
+      213: 2748396297729853354
+    second: Hend
+  - first:
+      213: -4446556834619780616
+    second: Sword
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -666,7 +672,7 @@ TextureImporter:
         width: 9
         height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -674,6 +680,48 @@ TextureImporter:
       bones: []
       spriteID: efac8d743768831e0800000000000000
       internalID: -2217874986795218178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hend
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 114
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa7cf240fd3442620800000000000000
+      internalID: 2748396297729853354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 193
+        width: 10
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 2, y: 0, z: 2, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f117e62e18aa42c0800000000000000
+      internalID: -4446556834619780616
       vertices: []
       indices: 
       edges: []

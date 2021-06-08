@@ -9,8 +9,7 @@ public class Player : MonoBehaviour
     private BoxCollider2D boxCollider;
     private Vector3 moveDelta;
     private RaycastHit2D hit;
-
-
+    
     private void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
@@ -30,16 +29,14 @@ public class Player : MonoBehaviour
         {
             transform.localScale = new Vector3(-2, 2, 1);
         }
-        hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(0, moveDelta.y), Mathf.Abs(moveDelta.y * Time.deltaTime), LayerMask.GetMask("Knight", "Blocking"));
+        hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(0, moveDelta.y), Mathf.Abs(moveDelta.y * Time.deltaTime), LayerMask.GetMask("Knight", "Blocking", "Mob"));
         if (hit.collider == null)
         {
-            //make move
             transform.Translate(0, moveDelta.y * Time.deltaTime, 0);
         }
-        hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(moveDelta.x, 0), Mathf.Abs(moveDelta.x * Time.deltaTime), LayerMask.GetMask("Knight", "Blocking"));
+        hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(moveDelta.x, 0), Mathf.Abs(moveDelta.x * Time.deltaTime), LayerMask.GetMask("Knight", "Blocking", "Mob"));
         if (hit.collider == null)
         {
-            //make move
             transform.Translate(moveDelta.x * Time.deltaTime, 0, 0);
         }
 
@@ -53,4 +50,5 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
+   
 }

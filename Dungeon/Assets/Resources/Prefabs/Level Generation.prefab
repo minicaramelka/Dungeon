@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8754700089173589974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8754700089173589972}
+  - component: {fileID: 8754700089173589975}
+  m_Layer: 0
+  m_Name: Level Generation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8754700089173589972
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8754700089173589974}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.419598, y: 2.461448, z: 0.52256083}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8754700089173589975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8754700089173589974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 399d45d1d4bd3144da5124166b2de7e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingPositions:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  rooms:
+  - {fileID: 5503688293441333868, guid: d5141a228aa4ef04bb048968fa003b62, type: 3}
+  - {fileID: 220527333959425598, guid: 52d49be46060b64499c4a3cdbfdf0122, type: 3}
+  - {fileID: 5214472032324995552, guid: b4a013f20f8818b49a8b7e74b69a2f4c, type: 3}
+  - {fileID: 5017637494867894585, guid: 1a4624bdc1bb4b14385401e6f14b0bdc, type: 3}
+  player: {fileID: 6891122673508253925, guid: f8097e85d78c46f45b386833d43c66bf, type: 3}
+  exit: {fileID: 7243128033468771845, guid: 53f8feff0e4234e448e5cd5c42e26b87, type: 3}
+  moveAmount: 3
+  startTimeBtwRoom: 0.25
+  minX: -7.5
+  maxX: 1.5
+  minY: -7.5
+  stopGeneration: 0
+  room:
+    serializedVersion: 2
+    m_Bits: 512
+  chack: 0
+  randStartingPos: 0
+  randExitPos: 0

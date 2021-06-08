@@ -6,8 +6,8 @@ using UnityEngine.TestTools;
 
 public class TestScript
 {
-    private GameObject player;
-    private GameObject game;
+    public GameObject player;
+    public GameObject game;
 
     [SetUp]
     public void SetUp()
@@ -20,6 +20,7 @@ public class TestScript
     public void TearDown()
     {
         Object.Destroy(game);
+        Object.Destroy(GameObject.Find("Rooms(Clone)"));
     }
 
     [UnityTest]
@@ -33,6 +34,23 @@ public class TestScript
         yield return new WaitForSeconds(2f);
         float x1 = player.gameObject.transform.position.x;
         yield return new WaitForSeconds(2f);
+        Object.Destroy(wall);
         Assert.AreEqual(x1, player.gameObject.transform.position.x);
+    }
+
+    [UnityTest]
+    public IEnumerator EnemyCollisionTest()
+    {
+        int HP = player.GetComponent<Health>().health;
+        Debug.Log(HP);
+        Vector3 playerPos = player.transform.position;
+        GameObject mob =
+            MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/mob_0"), playerPos, Quaternion.identity);
+        yield return new WaitForSeconds(2f);
+        int NowHP = player.GetComponent<Health>().health;
+        Debug.Log(NowHP);
+        Object.Destroy(mob);
+        Assert.Greater(HP, player.GetComponent<Health>().health);
+        
     }
 }

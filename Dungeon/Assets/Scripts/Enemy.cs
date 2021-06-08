@@ -24,11 +24,7 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        if(health <= 0)
-        {
-            Destroy(gameObject);
-        }
-
+        
         if(Vector2.Distance(transform.position, point.position) < positionOfPatrol && angry == false)
         {
             chill = true;
@@ -60,6 +56,11 @@ public class Enemy : MonoBehaviour
         if(goBack == true)
         {
             GoBack();
+        }
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 

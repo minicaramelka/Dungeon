@@ -13,7 +13,7 @@ public class SpawnRooms : MonoBehaviour
         if(roomDetection == null && levelGen.stopGeneration == true)
         {
             int rand = Random.Range(0, levelGen.rooms.Length);
-            Instantiate(levelGen.rooms[rand], transform.position, Quaternion.identity);
+            Instantiate(levelGen.rooms[rand], transform.position, Quaternion.identity, GameObject.Find("Rooms(Clone)").transform);
             Destroy(gameObject);
         }
     }

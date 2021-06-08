@@ -8,7 +8,7 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         int rand = Random.Range(0, objects.Length);
-        GameObject instance = (GameObject)Instantiate(objects[rand], transform.position, Quaternion.identity);
+        GameObject instance = (GameObject)Instantiate(objects[rand], transform.position, Quaternion.identity, GameObject.Find("Mobs").transform);
         instance.transform.parent = transform;
     }
 }

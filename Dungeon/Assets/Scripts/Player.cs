@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     private BoxCollider2D boxCollider;
     private Vector3 moveDelta;
     private RaycastHit2D hit;
-    
+
     private void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
@@ -19,8 +19,8 @@ public class Player : MonoBehaviour
     {
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
-        moveDelta = new Vector3(x,y,1);
-        
+        moveDelta = new Vector3(x, y, 1);
+
         if (moveDelta.x > 0)
         {
             transform.localScale = new Vector3(2, 2, 1);
@@ -50,5 +50,10 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
-   
+
+    public void runRight()
+    {
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.velocity = new Vector2(1, 0);
+    }
 }

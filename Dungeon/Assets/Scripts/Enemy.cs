@@ -25,9 +25,11 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         
-        if(Vector2.Distance(transform.position, point.position) < positionOfPatrol && angry == false)
+        if (Vector2.Distance(transform.position, point.position) < positionOfPatrol)
         {
             chill = true;
+            angry = false;
+            goBack = false;
         }
 
         if(Vector2.Distance(transform.position, player.position) < stoppingDistance)
@@ -53,11 +55,11 @@ public class Enemy : MonoBehaviour
             Angry();
         }
 
-        if(goBack == true)
+        if(goBack == true && chill != true)
         {
             GoBack();
         }
-
+        
         if (health <= 0)
         {
             Destroy(gameObject);
@@ -83,22 +85,26 @@ public class Enemy : MonoBehaviour
 
         if(moveingRight)
         {
+            speed = 0.8f;
             transform.position = new Vector2(transform.position.x + speed * Time.deltaTime, transform.position.y);
         }
 
         else
         {
+            speed = 0.8f;
             transform.position = new Vector2(transform.position.x - speed * Time.deltaTime, transform.position.y);
         }
     }
 
     public void Angry()
     {
+        speed = 1.1f;
         transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
     }
 
     public void GoBack()
     {
+        speed = 0.8f;
         transform.position = Vector2.MoveTowards(transform.position, point.position, speed * Time.deltaTime);
     }
 }

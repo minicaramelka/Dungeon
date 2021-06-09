@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Exit
+  - Mob
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Mob
@@ -44,4 +45,7 @@ TagManager:
     locked: 0
   - name: Knight
     uniqueID: 1517745483
+    locked: 0
+  - name: Player
+    uniqueID: 660751663
     locked: 0

@@ -7,11 +7,11 @@ public class CollisionDamage : MonoBehaviour
     public int collisionDamage = 10;
     public string collisionTag;
 
-    private void OnCollisionEnter2d(Collision2D col)
+    public void OnCollisionEnter2D(Collision2D coll)
     {
-        if (col.gameObject.tag == collisionTag)
+        if (coll.gameObject.tag == collisionTag)
         {
-            Health health = col.gameObject.GetComponent<Health>();
+            PlayerHealth health = coll.gameObject.GetComponent<PlayerHealth>();
             health.TakeHit(collisionDamage);
         }
     }

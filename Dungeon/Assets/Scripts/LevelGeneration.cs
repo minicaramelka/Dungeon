@@ -15,7 +15,7 @@ public class LevelGeneration : MonoBehaviour
     public float minX;
     public float maxX;
     public float minY;
-    public bool stopGeneration = false;
+    public bool stopGeneration;
     public LayerMask room;
     private int downCounter;
     public int chack = 0;
@@ -24,11 +24,12 @@ public class LevelGeneration : MonoBehaviour
 
     private void Start()
     {
+        Instantiate(Resources.Load<GameObject>("Prefabs/Rooms"));
         chack = chack + 1;
         randStartingPos = Random.Range(0, startingPositions.Length);
         transform.position = startingPositions[randStartingPos].position;
-        Instantiate(rooms[1], transform.position, Quaternion.identity);
-        if (chack == 1) //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+        Instantiate(rooms[1], transform.position, Quaternion.identity, GameObject.Find("Rooms(Clone)").transform);
+        if (chack == 1) //создание игрока в первой комнате
         {
             transform.position = startingPositions[randStartingPos].position;
             player.transform.position = transform.position;
@@ -39,19 +40,10 @@ public class LevelGeneration : MonoBehaviour
 
     private void Update()
     {
-        //if (timeBtwRoom <= 0 && stopGeneration == false)
-        //{
         if (stopGeneration == false)
         {
             Move();
         }
-            //Move();
-        //    timeBtwRoom = startTimeBtwRoom;
-        //}
-        //else
-        //{
-        //    timeBtwRoom -= Time.deltaTime;
-        //}
     }
 
     private void Move()
@@ -65,7 +57,7 @@ public class LevelGeneration : MonoBehaviour
                 transform.position = newPos;
                 int rand = Random.Range(0, rooms.Length);
                 randExitPos = rand;
-                Instantiate(rooms[rand], transform.position, Quaternion.identity);
+                Instantiate(rooms[rand], transform.position, Quaternion.identity, GameObject.Find("Rooms(Clone)").transform);
                 direction = Random.Range(1, 6);
                 if (direction == 3)
                 {
@@ -90,7 +82,7 @@ public class LevelGeneration : MonoBehaviour
                 transform.position = newPos;
                 int rand = Random.Range(0, rooms.Length);
                 randExitPos = rand;
-                Instantiate(rooms[rand], transform.position, Quaternion.identity);
+                Instantiate(rooms[rand], transform.position, Quaternion.identity, GameObject.Find("Rooms(Clone)").transform);
                 direction = Random.Range(3, 6);
             }
             else
@@ -109,7 +101,7 @@ public class LevelGeneration : MonoBehaviour
                     if (downCounter >= 2)
                     {
                         roomDetection.GetComponent<RoomType>().RoomDestruction();
-                        Instantiate(rooms[3], transform.position, Quaternion.identity);
+                        Instantiate(rooms[3], transform.position, Quaternion.identity, GameObject.Find("Rooms(Clone)").transform);
                     }
                     else
                     {
@@ -120,14 +112,14 @@ public class LevelGeneration : MonoBehaviour
                         {
                             randBottomRoom = 1;
                         }
-                        Instantiate(rooms[randBottomRoom], transform.position, Quaternion.identity);
+                        Instantiate(rooms[randBottomRoom], transform.position, Quaternion.identity, GameObject.Find("Rooms(Clone)").transform);
                     }
                 }
                 Vector2 newPos = new Vector2(transform.position.x, transform.position.y - moveAmount);
                 transform.position = newPos;
                 int rand = Random.Range(2, 4);
                 randExitPos = rand;
-                Instantiate(rooms[rand], transform.position, Quaternion.identity);
+                Instantiate(rooms[rand], transform.position, Quaternion.identity, GameObject.Find("Rooms(Clone)").transform);
                 direction = Random.Range(1, 6);
 
             }
@@ -136,7 +128,6 @@ public class LevelGeneration : MonoBehaviour
                 stopGeneration = true;
                 Vector2 newPos = new Vector2(transform.position.x, transform.position.y);
                 transform.position = newPos;
-                //Instantiate(exit, transform.position, Quaternion.identity);
                 exit.transform.position = transform.position;
             }
         }

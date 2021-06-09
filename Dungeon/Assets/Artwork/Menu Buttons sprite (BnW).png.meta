@@ -23,6 +23,9 @@ TextureImporter:
   - first:
       213: -1780571671099364792
     second: ControlsButton
+  - first:
+      213: 4902860978009340434
+    second: Lost
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -258,7 +261,7 @@ TextureImporter:
         width: 601
         height: 202
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -266,6 +269,27 @@ TextureImporter:
       bones: []
       spriteID: 84aaffebf732a47e0800000000000000
       internalID: -1780571671099364792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lost
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 625
+        width: 602
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21afe5145167a0440800000000000000
+      internalID: 4902860978009340434
       vertices: []
       indices: 
       edges: []

@@ -3724,6 +3724,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5580086070035518592, guid: f8097e85d78c46f45b386833d43c66bf, type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5580086070035518592, guid: f8097e85d78c46f45b386833d43c66bf, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6891122673508253925, guid: f8097e85d78c46f45b386833d43c66bf, type: 3}
       propertyPath: m_Name
       value: player_0
@@ -4572,9 +4580,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 902cb24fc07a1be4894b5ee0c6326784, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   lookAt: {fileID: 471297650}
   boundX: 0.15
   boundY: 0.05
+  playerHP: 0
 --- !u!81 &1019854873
 AudioListener:
   m_ObjectHideFlags: 0

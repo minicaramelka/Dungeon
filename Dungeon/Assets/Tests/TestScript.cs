@@ -53,4 +53,16 @@ public class TestScript
         Assert.Greater(HP, player.GetComponent<Health>().health);
         
     }
+
+    [UnityTest]
+    public IEnumerator AttackCollisionTest()
+    {
+        Vector3 playerPos = player.transform.position;
+        playerPos.x += 0.05f;
+        GameObject mob =
+        MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/mob_0"), playerPos, Quaternion.identity);
+        player.GetComponent<PlayerAttack>().Attack();
+        yield return new WaitForSeconds(1f);
+        Assert.IsTrue(mob == null);
+    }
 }

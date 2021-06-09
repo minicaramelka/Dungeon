@@ -128,7 +128,6 @@ public class LevelGeneration : MonoBehaviour
                 stopGeneration = true;
                 Vector2 newPos = new Vector2(transform.position.x, transform.position.y);
                 transform.position = newPos;
-                //Instantiate(exit, transform.position, Quaternion.identity);
                 exit.transform.position = transform.position;
             }
         }

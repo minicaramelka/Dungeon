@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 6891122673508253947}
   - component: {fileID: 6172340572160259522}
   - component: {fileID: 4909318304048205732}
-  - component: {fileID: -3712670694844056638}
+  - component: {fileID: 5580086070035518592}
   m_Layer: 3
   m_Name: player_0
   m_TagString: Player
@@ -249,7 +249,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   attackRange: 0.17
-  damage: 30
+  damage: 15
   anim: {fileID: 4909318304048205732}
 --- !u!95 &4909318304048205732
 Animator:
@@ -270,7 +270,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-3712670694844056638
+--- !u!114 &5580086070035518592
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -279,7 +279,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6891122673508253925}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a27d35d88ea2d2b4bb05de6075feebbb, type: 3}
+  m_Script: {fileID: 11500000, guid: f59f98b68bde2914eb6d44a44b57f3e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100

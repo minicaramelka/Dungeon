@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     public bool chill = false;
     public bool angry = false;
     public bool goBack = false;
+    public int playerHP;
 
     void Start()
     {
@@ -24,40 +25,43 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        
-        if (Vector2.Distance(transform.position, point.position) < positionOfPatrol)
+        playerHP = player.GetComponent<PlayerHealth>().health;
+        if (playerHP > 0)
         {
-            chill = true;
-            angry = false;
-            goBack = false;
-        }
+            if (Vector2.Distance(transform.position, point.position) < positionOfPatrol)
+            {
+                chill = true;
+                angry = false;
+                goBack = false;
+            }
 
-        if(Vector2.Distance(transform.position, player.position) < stoppingDistance)
-        {
-            angry = true;
-            chill = false;
-            goBack = false;
-        }
+            if (Vector2.Distance(transform.position, player.position) < stoppingDistance)
+            {
+                angry = true;
+                chill = false;
+                goBack = false;
+            }
 
-        if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
-        {
-            goBack = true;
-            angry = false;
-        }
+            if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
+            {
+                goBack = true;
+                angry = false;
+            }
 
-        if(chill == true)
-        {
-            Chill();      
-        }
+            if (chill == true)
+            {
+                Chill();
+            }
 
-        if (angry == true)
-        {
-            Angry();
-        }
+            if (angry == true)
+            {
+                Angry();
+            }
 
-        if(goBack == true && chill != true)
-        {
-            GoBack();
+            if (goBack == true && chill != true)
+            {
+                GoBack();
+            }
         }
         
         if (health <= 0)

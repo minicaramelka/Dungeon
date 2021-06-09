@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
+        
     }
 
     private void FixedUpdate()
@@ -39,14 +40,14 @@ public class Player : MonoBehaviour
         {
             transform.Translate(moveDelta.x * Time.deltaTime, 0, 0);
         }
-
+        
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Exit")
         {
-            Debug.Log("Игра закрылась");
+            Debug.Log("Следующий уровень");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

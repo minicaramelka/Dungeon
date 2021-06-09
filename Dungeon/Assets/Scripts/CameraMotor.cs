@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class CameraMotor : MonoBehaviour
 {
+    public Transform player;
     public Transform lookAt;
     public float boundX = 0.15f;
     public float boundY = 0.05f;
+    public int playerHP;
+
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     private void LateUpdate()
     {
         Vector3 delta = Vector3.zero;
-
         float deltaX = lookAt.position.x - transform.position.x;
         if (deltaX > boundX || deltaX < -boundX)
         {
@@ -30,7 +36,7 @@ public class CameraMotor : MonoBehaviour
         {
             if (transform.position.y < lookAt.position.y)
             {
-                delta.y = deltaY - boundY;
+               delta.y = deltaY - boundY;
             }
             else
             {
@@ -38,5 +44,5 @@ public class CameraMotor : MonoBehaviour
             }
         }
         transform.position += new Vector3(delta.x, delta.y, 0);
-    }
+    } 
 }
